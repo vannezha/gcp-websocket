@@ -1,5 +1,7 @@
 <?php
 
+use App\Events\ChatMessageEvent;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::post('/chat-message',function(Request $request){
+    event(new ChatMessageEvent($request->message));
+    return "berhasil";
+});
+
+Route::get('/ws',function(){
+    // event(new ChatMessageEvent("ini pesan test aja kok bang"));
+    return view('chatapp');
+});
 
 Route::get('/', function () {
     return view('welcome');
