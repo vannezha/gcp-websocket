@@ -19,6 +19,7 @@
 
 
 
-    @vite('resources/js/app.js')
+    {{-- @vite('resources/js/app.js') --}}
+    {{-- <script src=""></script> --}}
 </body>
 </html>
