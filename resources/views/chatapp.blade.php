@@ -8,18 +8,18 @@
 </head>
 <body>
 
-    <ul id="list-messages">
+    {{-- <ul id="list-messages">
 
     </ul>
 
     <form action="" id="chat-form">
         <label for="input-message">Messages</label>
         <input type="text" id="input-message">
-    </form>
+    </form> --}}
 
 
 
     {{-- @vite('resources/js/app.js') --}}
-    {{-- <script src=""></script> --}}
+    <script src="build/assets/app.5471fb6b.js"></script>
 </body>
 </html>

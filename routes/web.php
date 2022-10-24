@@ -20,9 +20,16 @@ Route::post('/chat-message',function(Request $request){
     return "berhasil";
 });
 
+Route::get('/trigger',function(){
+    event(new ChatMessageEvent("ini pesan test aja kok bang"));
+    // return view('chatapp');
+    return 'berhasil';
+});
+
 Route::get('/ws',function(){
     // event(new ChatMessageEvent("ini pesan test aja kok bang"));
     return view('chatapp');
+    // return 'berhasil';
 });
 
 Route::get('/', function () {
