@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MessageEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // ini 22 nya sama aja, yang event new lebih banyak dipakek bule
+    // MessageEvent::dispatch();
+    event(new MessageEvent("Vanny Ezhaan Nur Sandika"));
+
     return view('welcome');
+});
+
+Route::get('/send-message', function(){
+    event(new MessageEvent("Vanny Ezhaan Nur Sandika"));
 });
