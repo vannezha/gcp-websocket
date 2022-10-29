@@ -1,7 +1,5 @@
 <?php
 
-use App\Events\ChatMessageEvent;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,29 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/chat-message',function(Request $request){
-    event(new ChatMessageEvent($request->message));
-    return "berhasil";
-});
-
-Route::get('/trigger',function(){
-    event(new ChatMessageEvent("ini pesan test aja kok bang"));
-    // return view('chatapp');
-    return 'berhasil';
-});
-
-Route::get('/ws',function(){
-    // event(new ChatMessageEvent("ini pesan test aja kok bang"));
-    return view('chatapp');
-    // return 'berhasil';
-});
-
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-require __DIR__.'/auth.php';
